@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		A4EA251722C15F1B00B8941F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EA251622C15F1B00B8941F /* AppDelegate.swift */; };
-		A4EA251922C15F1B00B8941F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EA251822C15F1B00B8941F /* ViewController.swift */; };
 		A4EA251C22C15F1B00B8941F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EA251A22C15F1B00B8941F /* Main.storyboard */; };
 		A4EA251E22C15F1C00B8941F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4EA251D22C15F1C00B8941F /* Assets.xcassets */; };
 		A4EA252122C15F1C00B8941F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EA251F22C15F1C00B8941F /* LaunchScreen.storyboard */; };
+		A4EA252F22C1616F00B8941F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EA252E22C1616F00B8941F /* Post.swift */; };
+		A4EA253122C164C900B8941F /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EA253022C164C900B8941F /* PostController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4EA251322C15F1B00B8941F /* Post.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Post.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4EA251622C15F1B00B8941F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A4EA251822C15F1B00B8941F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A4EA251B22C15F1B00B8941F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4EA251D22C15F1C00B8941F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4EA252022C15F1C00B8941F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4EA252222C15F1C00B8941F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4EA252E22C1616F00B8941F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A4EA253022C164C900B8941F /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,63 @@
 		A4EA251522C15F1B00B8941F /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				A4EA251622C15F1B00B8941F /* AppDelegate.swift */,
-				A4EA251822C15F1B00B8941F /* ViewController.swift */,
+				A4EA252A22C160CA00B8941F /* Model */,
+				A4EA252922C160C200B8941F /* Controller */,
+				A4EA252D22C1610200B8941F /* Resources */,
+				A4EA252822C1607F00B8941F /* Views */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		A4EA252822C1607F00B8941F /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				A4EA251A22C15F1B00B8941F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4EA252922C160C200B8941F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A4EA252C22C160DD00B8941F /* Model Controllers */,
+				A4EA252B22C160D300B8941F /* View Controllers */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A4EA252A22C160CA00B8941F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A4EA252E22C1616F00B8941F /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A4EA252B22C160D300B8941F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A4EA252C22C160DD00B8941F /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4EA253022C164C900B8941F /* PostController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		A4EA252D22C1610200B8941F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A4EA251622C15F1B00B8941F /* AppDelegate.swift */,
 				A4EA251D22C15F1C00B8941F /* Assets.xcassets */,
 				A4EA251F22C15F1C00B8941F /* LaunchScreen.storyboard */,
 				A4EA252222C15F1C00B8941F /* Info.plist */,
 			);
-			path = Post;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4EA251922C15F1B00B8941F /* ViewController.swift in Sources */,
 				A4EA251722C15F1B00B8941F /* AppDelegate.swift in Sources */,
+				A4EA252F22C1616F00B8941F /* Post.swift in Sources */,
+				A4EA253122C164C900B8941F /* PostController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZLX8VSJT3;
-				INFOPLIST_FILE = Post/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Post/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3ZLX8VSJT3;
-				INFOPLIST_FILE = Post/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Post/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
