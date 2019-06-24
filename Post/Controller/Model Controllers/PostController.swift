@@ -10,11 +10,11 @@ import Foundation
 
 class PostController {
     
-    static let baseURL = URL(string: "http://devmtn-posts.firebaseio.com/posts")
+    let baseURL = URL(string: "http://devmtn-posts.firebaseio.com/posts")
     
-    static var posts: [Post] = []
+    var posts: [Post] = []
     
-    static func fetchPosts(completion: @escaping () -> Void) {
+    func fetchPosts(completion: @escaping () -> Void) {
         guard let url = baseURL else {completion(); return }
         let getterEndpoint = url.appendingPathExtension("json")
         var urlRequest = URLRequest(url: getterEndpoint)
@@ -27,7 +27,7 @@ class PostController {
                 let postsDictionary = try jsDecoder.decode([String:Post].self, from: data)
                 var posts = postsDictionary.compactMap({ $0.value })
                 posts.sort(by: { $0.timestamp > $1.timestamp })
-                posts = self.posts
+                self.posts = posts
                 completion()
                 
             } catch {
@@ -36,6 +36,7 @@ class PostController {
                 return
             }
         }
+        dataTask.resume()
     }
     
 }

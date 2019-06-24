@@ -13,6 +13,7 @@
 		A4EA252122C15F1C00B8941F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4EA251F22C15F1C00B8941F /* LaunchScreen.storyboard */; };
 		A4EA252F22C1616F00B8941F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EA252E22C1616F00B8941F /* Post.swift */; };
 		A4EA253122C164C900B8941F /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EA253022C164C900B8941F /* PostController.swift */; };
+		A4EA253322C177BC00B8941F /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EA253222C177BC00B8941F /* PostListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A4EA252222C15F1C00B8941F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4EA252E22C1616F00B8941F /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A4EA253022C164C900B8941F /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		A4EA253222C177BC00B8941F /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		A4EA252B22C160D300B8941F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A4EA253222C177BC00B8941F /* PostListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4EA253322C177BC00B8941F /* PostListViewController.swift in Sources */,
 				A4EA251722C15F1B00B8941F /* AppDelegate.swift in Sources */,
 				A4EA252F22C1616F00B8941F /* Post.swift in Sources */,
 				A4EA253122C164C900B8941F /* PostController.swift in Sources */,
