@@ -16,6 +16,7 @@ class PostListViewController: UIViewController, UITableViewDelegate, UITableView
     
     func reloadTableView() {
         DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.postTableView.reloadData()
         }
     }
@@ -33,6 +34,7 @@ class PostListViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.postTableView.delegate = self
         self.postTableView.dataSource = self
         self.postTableView.estimatedRowHeight = 45
