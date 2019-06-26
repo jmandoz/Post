@@ -46,6 +46,40 @@ class PostListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    @IBAction func addPostButton(_ sender: Any) {
+        presentNewPostAlert()
+    }
+    
+    func presentNewPostAlert() {
+        //creating an alert constant the is an instance of UIAlertController
+        let alert = UIAlertController(title: "new post", message: "create a new post" , preferredStyle: UIAlertController.Style.alert)
+        //creating the text fields for the alerts and adding placeholders
+        //Username
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter your username"
+        }
+        //Message
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter Message"
+        }
+        //Adding an alert action that will allow us to use the text that is entered in the textfield
+        alert.addAction(UIAlertAction(title: "Agreed", style: .default, handler: { [weak alert] (_) in
+            //getting the index of the first textfield [0] and assigning the username textfield.text
+            guard let textField = alert?.textFields?[0], let usernameText = textField.text else {return}
+            //getting the index of the second textfield [1] and assigning the message textfield.text
+            guard let textField2 = alert?.textFields?[1], let messageText = textField2.text else {return}
+            //adding our post using the add new post function from our post controller and reloading the tableview
+            self.postController.addNewPostWith(username: usernameText, text: messageText, completion: {
+                self.reloadTableView()
+            })
+        }))
+        //Cancel button
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postController.posts.count
     }
@@ -55,8 +89,9 @@ class PostListViewController: UIViewController, UITableViewDelegate, UITableView
         
         let post = postController.posts[indexPath.row]
         
+        let date = Date(timeIntervalSince1970: post.timestamp)
         cell.textLabel?.text = post.text
-        cell.detailTextLabel?.text = "\(post.username) \(post.timestamp)"
+        cell.detailTextLabel?.text = "\(post.username) \(date.stringValue())"
         
         return cell
     }
